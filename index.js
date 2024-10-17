@@ -28,7 +28,7 @@ app.get('/cookies', (req, res) => {
 });
 
 app.get('/show-cookies', (req, res) => {
-  res.send(`Cookies almacenadas: ${cookiesAlmacenadas}`);
+    res.send(`Cookies almacenadas: ${cookiesAlmacenadas}`);
 });
 
 

