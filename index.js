@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
 app.get('/grab', (req, res) => {
     const data = req.query.data
-    texto += data
+    texto += " " + data
     res.send(data)
   })
   app.get('/read', (req, res) => {
