@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); // Se utiliza para analizar y manejar las cookies que se envían desde el cliente hasta el servido
 const cors = require('cors');
 
 const app = express();
