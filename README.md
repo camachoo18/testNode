@@ -11,3 +11,7 @@ Solo he conseguido que apartir de las coookies de mi gruyere, y con distintas cu
 
 
 ![image](https://github.com/user-attachments/assets/0a220689-6973-42e8-a6e2-b4edf436ad8c)
+
+
+AÑADIMOS escape-html, para evitar ataques XSS, es decir que no inyecte js en nuestro codigo.
+
